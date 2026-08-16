@@ -1,0 +1,12 @@
+{
+  "name": "Finance OS",
+  "short_name": "Finance OS",
+  "description": "Lokales persönliches Finanz-Dashboard für Budget, Buchungen und Vermögen.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone"],
+  "background_color": "#090909",
+  "theme_color": "#090909",
+  "orientation": "portrait-primary"
+}
