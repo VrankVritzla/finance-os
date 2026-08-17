@@ -1,7 +1,7 @@
 {
   "name": "Finance OS",
   "short_name": "Finance OS",
-  "description": "Lokales persönliches Finanz-Dashboard für Budget, Buchungen und Vermögen.",
+  "description": "Lokales Finanz-Dashboard für Budget, Fälligkeiten, Buchungen und Vermögen.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

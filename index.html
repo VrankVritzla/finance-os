@@ -9,156 +9,163 @@
   <meta name="apple-mobile-web-app-title" content="Finance OS" />
   <title>Finance OS</title>
   <link rel="manifest" href="./manifest.webmanifest" />
-
-  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAFeklEQVR4nO3cP84aSRCG8fpWm3AMJGLu4mwv4mxDZ3sRZ3sXYiSuskFLo1nmzwe801XV3c8vsjHGmHlc3QyMv06nkwGf+iP6CaBtBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkf0Y/gZdcr9fopxDjdrtFP4VvfKW9tHnYaLbkjCldQKvdPB4P/2eSwfl8Xt6YqqQsAS27GTaaLcuYMpSUIqB5PXTzrXlJ4Q0FB0Q6H0uSUWRAUz2k87Epo6iGYgIinWMFZhRwIpF6Dje9kv7nPrwDop5KohpyXcLK3410qirLmdta5jeBqMdHeYXd5pBTQNTjybMhj4D4VCuKwyvvt4Qxfjy5vdrVA2LxiuKzkNUNiHpiOTTENxIhqRgQ4yeD2kOoVkC888qm0hGpu4QxfjKoehTYA0FSJSB2P9nU2wkxgSAhIEiOD4j1K6dKqxgTCBICgoSAIDk4IDZAmdXYBjGBICEgSAgIEgKChIAgISBICAgSAoKkjf+ldUD3+33+08vlEvVM9jGBMnqqZ/WWJAgona1WcjZEQLnsV5KwIQKChIAgIaBEftx/RT+FtxEQJASURRk/P+33zn0Sng0ioBTmi9dWQwnrMQLKYLn1WTaUsx7jo4xwWxvn0tC/l799n87bmECR9t925a/HCChQi2/alwgoxrf1NDF+jIByaqUeI6AQHWx9JgTkrad6jICcdVaPEZCn/uoxAnLTZT1GQD76OOWzioCq6+aUzyoCCtZ0PUZAtfW69ZkQUEXd12MEVM8I9RgBVTJIPTbUF8rcrjYfpx4bZwK5XW3e8SmfVUME5Ha1ed+nfFb1H1Ceq837q8dGCOhbRy06Q219JgRkZvbj/kvMaMx6rO93Ye82Ue7/wcEeth7reAJ9PFHenUYj12O9BvTKlcL7v/piQ4PXY10G9MqVwvu3T4+z38dop3xW9RbQ/pXC+7dsPeDqYw54ymdVVwHtH9Sf9vsy8+4jvzVvBqnHunkX9srRfTqo5afv7pf/sb/mt6yOsXHqsT4m0Af1zG9//Xg/1bN6y1D1WAcBKfXM7/DtfZatLG8frR5rPaBD6pnfc+vOW/XMf3XAeqzpgI6tR/ktH/+uDrS6ia76LvqD/fWw2guo0uDZehAy2tfYEuZWz/zRhl2eXtFSQP71TPZPPKb9L1QdNBNQYD3FViUj12OtBBReT7FsZfB6LPMm+unbyjuffXruUSjmSdIJtPyu+9apPHa4sTIGtHWlBB88JZQuoP3rbAb/4CmhdAG9iHqSaDIg6smjvYCoJ5X2AkIq6QLiQ4O2pAvI+NCgKRkDMj40aEfejzIopglJJxBaQUCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAcHdLvdzOx8Ph/7sDhEOS7lGB2FCQQJAUFCQJAcHxDboJxqbICMCQQRAUFSJSBWsWwqrV/GBIKobkAMoQyqHoVaAdWYllBUOiIVJxA7oQzq7X4K9kCQ1A2IIRSr9vgxhwlEQ1Ec6jHPJYyGPLm92h4B8Y4sisMr7zSBWMg8+Sxehd8SRkM+POsxs6/T6eTzJxXX67X84PF4eP65I5j+cXruGbzPA01/N0bRsULqsZATiTR0uKh6zH8Jm2M50wWmU0QGZLOGjIzeNJ/fgSdKggMqyOgtSdIpUgRk/2+ooKQnyy1jeD2WJ6DJsiQbOKbV9xkZupmkC2iyWtLIUnUzyRvQ3LAx5Yxmro2AkBbfSISEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAiS/wCVzPdN2rTMugAAAABJRU5ErkJggg==" />
-  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAFeklEQVR4nO3cP84aSRCG8fpWm3AMJGLu4mwv4mxDZ3sRZ3sXYiSuskFLo1nmzwe801XV3c8vsjHGmHlc3QyMv06nkwGf+iP6CaBtBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkf0Y/gZdcr9fopxDjdrtFP4VvfKW9tHnYaLbkjCldQKvdPB4P/2eSwfl8Xt6YqqQsAS27GTaaLcuYMpSUIqB5PXTzrXlJ4Q0FB0Q6H0uSUWRAUz2k87Epo6iGYgIinWMFZhRwIpF6Dje9kv7nPrwDop5KohpyXcLK3410qirLmdta5jeBqMdHeYXd5pBTQNTjybMhj4D4VCuKwyvvt4Qxfjy5vdrVA2LxiuKzkNUNiHpiOTTENxIhqRgQ4yeD2kOoVkC888qm0hGpu4QxfjKoehTYA0FSJSB2P9nU2wkxgSAhIEiOD4j1K6dKqxgTCBICgoSAIDk4IDZAmdXYBjGBICEgSAgIEgKChIAgISBICAgSAoKkjf+ldUD3+33+08vlEvVM9jGBMnqqZ/WWJAgona1WcjZEQLnsV5KwIQKChIAgIaBEftx/RT+FtxEQJASURRk/P+33zn0Sng0ioBTmi9dWQwnrMQLKYLn1WTaUsx7jo4xwWxvn0tC/l799n87bmECR9t925a/HCChQi2/alwgoxrf1NDF+jIByaqUeI6AQHWx9JgTkrad6jICcdVaPEZCn/uoxAnLTZT1GQD76OOWzioCq6+aUzyoCCtZ0PUZAtfW69ZkQUEXd12MEVM8I9RgBVTJIPTbUF8rcrjYfpx4bZwK5XW3e8SmfVUME5Ha1ed+nfFb1H1Ceq837q8dGCOhbRy06Q219JgRkZvbj/kvMaMx6rO93Ye82Ue7/wcEeth7reAJ9PFHenUYj12O9BvTKlcL7v/piQ4PXY10G9MqVwvu3T4+z38dop3xW9RbQ/pXC+7dsPeDqYw54ymdVVwHtH9Sf9vsy8+4jvzVvBqnHunkX9srRfTqo5afv7pf/sb/mt6yOsXHqsT4m0Af1zG9//Xg/1bN6y1D1WAcBKfXM7/DtfZatLG8frR5rPaBD6pnfc+vOW/XMf3XAeqzpgI6tR/ktH/+uDrS6ia76LvqD/fWw2guo0uDZehAy2tfYEuZWz/zRhl2eXtFSQP71TPZPPKb9L1QdNBNQYD3FViUj12OtBBReT7FsZfB6LPMm+unbyjuffXruUSjmSdIJtPyu+9apPHa4sTIGtHWlBB88JZQuoP3rbAb/4CmhdAG9iHqSaDIg6smjvYCoJ5X2AkIq6QLiQ4O2pAvI+NCgKRkDMj40aEfejzIopglJJxBaQUCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAcHdLvdzOx8Ph/7sDhEOS7lGB2FCQQJAUFCQJAcHxDboJxqbICMCQQRAUFSJSBWsWwqrV/GBIKobkAMoQyqHoVaAdWYllBUOiIVJxA7oQzq7X4K9kCQ1A2IIRSr9vgxhwlEQ1Ec6jHPJYyGPLm92h4B8Y4sisMr7zSBWMg8+Sxehd8SRkM+POsxs6/T6eTzJxXX67X84PF4eP65I5j+cXruGbzPA01/N0bRsULqsZATiTR0uKh6zH8Jm2M50wWmU0QGZLOGjIzeNJ/fgSdKggMqyOgtSdIpUgRk/2+ooKQnyy1jeD2WJ6DJsiQbOKbV9xkZupmkC2iyWtLIUnUzyRvQ3LAx5Yxmro2AkBbfSISEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAiS/wCVzPdN2rTMugAAAABJRU5ErkJggg==" />
-  <style>
-:root{--bg:#090909;--panel:#121212;--panel2:#171717;--line:#242424;--text:#f4f4f4;--muted:#8e8e93;--soft:#b8b8bd;--accent:#67f29a;--accent2:#d9ff6b;--danger:#ff5f67;--warning:#ffbf5b;--radius:22px;--shadow:0 18px 40px rgba(0,0,0,.28)}
-*{box-sizing:border-box}html{background:var(--bg);color-scheme:dark}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{color:inherit}.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top) + 18px) 20px 14px;background:linear-gradient(180deg,#090909 75%,rgba(9,9,9,.0));backdrop-filter:blur(16px)}.eyebrow,.panel-kicker{font-size:11px;letter-spacing:.15em;color:var(--muted);font-weight:800}.topbar h1{margin:2px 0 0;font-size:29px;letter-spacing:-.04em}.icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#151515;font-size:26px;display:grid;place-items:center;cursor:pointer}.icon-btn.primary{background:var(--text);color:#070707;border:0;font-weight:400}.view{display:none;padding:6px 16px 110px;max-width:820px;margin:0 auto}.view.active{display:block}.hero-card{padding:28px 22px 22px;background:linear-gradient(145deg,#1b1b1b,#101010);border:1px solid #262626;border-radius:28px;box-shadow:var(--shadow);margin-bottom:14px}.hero-label{color:var(--soft);font-size:14px}.hero-value{font-size:48px;line-height:1.05;font-weight:760;letter-spacing:-.055em;margin:10px 0 6px}.hero-sub{color:var(--muted);font-size:13px}.progress{height:7px;background:#242424;border-radius:99px;overflow:hidden;margin-top:18px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;transition:width .3s ease}.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}.kpi-card{padding:17px;background:var(--panel);border:1px solid var(--line);border-radius:20px;min-height:118px;display:flex;flex-direction:column}.kpi-card span{font-size:12px;color:var(--muted)}.kpi-card strong{font-size:23px;letter-spacing:-.035em;margin:10px 0 4px}.kpi-card small{color:#69696e;margin-top:auto}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:0 0 14px}.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}.panel-head h2{font-size:19px;margin:3px 0 0;letter-spacing:-.03em}.badge{font-size:11px;background:#1c241f;color:var(--accent);border:1px solid #28412f;border-radius:999px;padding:7px 9px;white-space:nowrap}.text-btn{background:none;border:0;color:var(--accent);padding:4px 0;cursor:pointer;font-size:13px}.flow-list{display:grid;gap:9px}.flow-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid #1f1f1f}.flow-row:last-child{border-bottom:0}.flow-row span{color:var(--soft);font-size:14px}.flow-row strong{font-size:14px}.flow-row.total strong{color:var(--accent)}.bars{display:grid;gap:12px}.bar-row{display:grid;grid-template-columns:minmax(90px,1fr) 2fr auto;align-items:center;gap:10px;font-size:13px}.bar-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bar-track{height:8px;background:#252525;border-radius:999px;overflow:hidden}.bar-fill{height:100%;background:#ededed;border-radius:999px}.bar-value{color:var(--soft);font-variant-numeric:tabular-nums}.empty-state{display:none;color:var(--muted);padding:18px 4px;text-align:center;font-size:13px}.empty-state.large{padding:50px 8px}.section-intro{color:var(--muted);font-size:13px;line-height:1.5;margin:0 4px 14px}.section-intro p{margin:0}.row-between{display:flex;justify-content:space-between;align-items:center;gap:12px}.pill-btn,.primary-btn,.secondary-btn,.action-btn{border-radius:14px;border:0;padding:12px 14px;font-weight:700;cursor:pointer}.pill-btn,.primary-btn{background:var(--text);color:#090909}.secondary-btn{background:#202020;color:var(--text);border:1px solid #303030}.editor-panel{padding-bottom:10px}.edit-list{display:grid;gap:8px}.edit-row{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(90px,.8fr) auto;gap:8px;align-items:center;background:var(--panel2);border:1px solid #242424;border-radius:15px;padding:8px 8px 8px 12px}.edit-row .meta{min-width:0}.edit-row .name{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.edit-row .sub{font-size:11px;color:var(--muted);margin-top:2px}.edit-row .amount{text-align:right;font-variant-numeric:tabular-nums}.mini-actions{display:flex;gap:4px}.mini-btn{background:#202020;border:0;width:32px;height:32px;border-radius:10px;color:var(--muted);cursor:pointer}.helper{font-size:12px;line-height:1.45;color:var(--muted);margin:13px 0 0}.segmented{display:grid;grid-template-columns:1fr 1fr;background:#1c1c1c;border:1px solid #292929;padding:3px;border-radius:14px;margin-bottom:16px}.segmented button{border:0;background:none;color:var(--muted);padding:10px;border-radius:11px;cursor:pointer}.segmented button.active{background:#f2f2f2;color:#080808;font-weight:700}.budget-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px}.budget-summary>div,.money-input{background:#171717;border:1px solid #242424;border-radius:15px;padding:14px;display:flex;flex-direction:column;gap:7px}.budget-summary span,.money-input span{font-size:11px;color:var(--muted)}.budget-summary strong{font-size:21px}.money-input input{background:transparent;border:0;color:var(--text);font-size:20px;font-weight:700;outline:none;width:100%}.hidden{display:none!important}.filters{display:grid;grid-template-columns:1fr 1fr;gap:8px}.filters input,.filters select,.field input,.field select{width:100%;background:#181818;border:1px solid #2b2b2b;border-radius:13px;color:var(--text);padding:12px;outline:none}.transaction-summary{display:flex;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:1px solid #222}.transaction-list{display:grid;gap:8px}.transaction-item{display:grid;grid-template-columns:46px minmax(0,1fr) auto;gap:11px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:12px}.transaction-date{width:46px;height:46px;background:#1a1a1a;border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:center}.transaction-date strong{font-size:15px}.transaction-date small{font-size:9px;color:var(--muted);text-transform:uppercase}.transaction-info{min-width:0}.transaction-info strong{font-size:14px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.transaction-info small{color:var(--muted)}.transaction-amount{text-align:right;font-weight:700}.transaction-amount small{display:block;color:var(--muted);font-weight:400;margin-top:4px}.wealth-hero{margin-bottom:14px;padding:24px;background:linear-gradient(135deg,#161b18,#111);border:1px solid #243128;border-radius:26px}.wealth-hero span{color:var(--soft);font-size:13px}.wealth-hero strong{display:block;font-size:40px;letter-spacing:-.05em;margin:8px 0}.wealth-hero small{color:var(--muted)}.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.action-btn{background:#1a1a1a;border:1px solid #292929;color:var(--text);text-align:center}.action-btn.danger{color:var(--danger)}.file-btn{position:relative;overflow:hidden}.file-btn input{position:absolute;inset:0;opacity:0;cursor:pointer}.bottom-nav{position:fixed;z-index:30;bottom:0;left:0;right:0;height:calc(72px + env(safe-area-inset-bottom));padding:8px 10px env(safe-area-inset-bottom);display:grid;grid-template-columns:repeat(4,1fr);background:rgba(12,12,12,.94);border-top:1px solid #202020;backdrop-filter:blur(20px)}.nav-item{background:none;border:0;color:#6f6f73;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer}.nav-item span{font-size:21px;line-height:1}.nav-item small{font-size:10px}.nav-item.active{color:var(--text)}dialog{border:0;padding:0;background:transparent;color:var(--text);width:min(92vw,520px)}dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(8px)}.modal-card{background:#121212;border:1px solid #292929;border-radius:26px;padding:18px;box-shadow:var(--shadow)}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}.modal-head h2{margin:3px 0;font-size:22px}.modal-head .icon-btn{width:36px;height:36px;font-size:22px}.field{display:grid;gap:7px;margin-bottom:12px}.field label{font-size:12px;color:var(--muted)}.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.toast{position:fixed;z-index:50;left:50%;bottom:95px;transform:translate(-50%,20px);background:#f1f1f1;color:#090909;border-radius:999px;padding:10px 14px;font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}canvas{width:100%;height:160px;display:block}.negative{color:var(--danger)!important}.positive{color:var(--accent)!important}.performance-summary{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:4px 0 14px}.performance-summary strong{font-size:34px;letter-spacing:-.045em}.performance-summary span{font-size:13px;color:var(--muted);text-align:right}.performance-track{height:8px;background:#252525;border-radius:999px;overflow:hidden}.performance-fill{height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .3s ease}.chart-legend{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:10px}.legend-item{display:flex;align-items:center;gap:7px;color:var(--soft);font-size:12px}.legend-dot{width:8px;height:8px;border-radius:50%;background:var(--legend-color,#eee)}.chart-note{color:var(--muted);font-size:12px;line-height:1.45;margin-top:8px}.asset-performance{font-weight:700}.asset-performance.positive{color:var(--accent)}.asset-performance.negative{color:var(--danger)}
-@media (min-width:760px){.topbar{max-width:820px;margin:0 auto}.kpi-grid{grid-template-columns:repeat(4,1fr)}.budget-summary{grid-template-columns:1fr 1fr}.bottom-nav{width:520px;left:50%;right:auto;transform:translateX(-50%);bottom:14px;border:1px solid #282828;border-radius:22px;height:68px;padding:6px;box-shadow:var(--shadow)}.view{padding-bottom:110px}}
-
-  
-.data-status{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}.data-status>div{background:#171717;border:1px solid #242424;border-radius:15px;padding:13px}.data-status span{display:block;font-size:11px;color:var(--muted);margin-bottom:7px}.data-status strong{font-size:13px}.status-good{color:var(--accent)}.status-warn{color:var(--warning)}.backup-warning{display:none;margin:0 0 14px;padding:12px 14px;border-radius:14px;background:#201c13;border:1px solid #49391f;color:#e7c987;font-size:12px;line-height:1.45}.backup-warning.show{display:block}.tiny-btn{background:none;border:0;color:var(--accent);padding:0;margin-top:6px;font-size:11px;cursor:pointer}.app-version{color:#5f5f64;font-size:11px;margin-top:12px;text-align:center}
-</style>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div id="appShell">
+  <div id="app">
     <header class="topbar">
       <div>
         <div class="eyebrow">FINANCE OS</div>
         <h1 id="pageTitle">Dashboard</h1>
       </div>
-      <button id="quickAddBtn" class="icon-btn primary" aria-label="Ausgabe hinzufügen">＋</button>
+      <button id="quickAddBtn" class="icon-btn primary" aria-label="Ausgabe hinzufügen">+</button>
     </header>
 
     <main>
       <section id="dashboardView" class="view active">
-        <div class="hero-card">
-          <div class="hero-label">Noch frei diesen Monat</div>
-          <div class="hero-value" id="remainingBudget">0 €</div>
-          <div class="hero-sub" id="budgetSub">von 0 € Monatsbudget</div>
-          <div class="progress"><div id="budgetProgress" class="progress-fill"></div></div>
-        </div>
+        <article class="hero-card">
+          <div class="hero-label">Noch frei im Gehaltszyklus</div>
+          <div id="cycleRemaining" class="hero-value">0,00 €</div>
+          <div id="cycleSub" class="hero-sub">Gehaltszyklus wird berechnet</div>
+          <div class="progress"><div id="cycleProgress" class="progress-fill"></div></div>
+        </article>
 
         <div class="kpi-grid">
-          <article class="kpi-card"><span>Nettovermögen</span><strong id="netWorth">0 €</strong><small id="netWorthHint">Assets − Verbindlichkeiten</small></article>
-          <article class="kpi-card"><span>Cash</span><strong id="cashTotal">0 €</strong><small>Konten & Bargeld</small></article>
-          <article class="kpi-card"><span>Investments</span><strong id="investmentTotal">0 €</strong><small id="investmentHint">ETF, Aktien, Krypto</small></article>
-          <article class="kpi-card"><span>Ausgegeben</span><strong id="spentMonth">0 €</strong><small id="spentHint">diesen Monat</small></article>
+          <article class="kpi-card"><span>Bis Gehalt sicher</span><strong id="safeUntilSalary">0,00 €</strong><small id="safeUntilSalaryNote">Cash nach geplanten Abbuchungen</small></article>
+          <article class="kpi-card"><span>Nettovermögen</span><strong id="netWorth">0,00 €</strong><small>Vermögen minus Verbindlichkeiten</small></article>
+          <article class="kpi-card"><span>Investments</span><strong id="investmentTotal">0,00 €</strong><small id="investmentGainSmall">Noch kein Einstand</small></article>
+          <article class="kpi-card"><span>Ausgaben Zyklus</span><strong id="cycleSpent">0,00 €</strong><small id="cycleCompare">Keine Vergleichsdaten</small></article>
         </div>
 
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">MONATSFLUSS</span><h2>Wo dein Geld hingeht</h2></div><span class="badge" id="savingsRateBadge">0 % Sparquote</span></div>
-          <div id="flowRows" class="flow-list"></div>
-        </article>
-
-        <article id="investmentPerformancePanel" class="panel hidden">
-          <div class="panel-head"><div><span class="panel-kicker">INVESTMENTS</span><h2>Performance</h2></div><span class="badge" id="investmentPerformancePct">0,00 %</span></div>
-          <div class="performance-summary"><strong id="investmentPerformanceValue">0 €</strong><span id="investmentPerformanceSub">Wert heute − Einstand</span></div>
-          <div class="performance-track"><div id="investmentPerformanceFill" class="performance-fill"></div></div>
+          <div class="panel-head"><div><span class="panel-kicker">NÄCHSTE TAGE</span><h2>Was wird bald abgebucht?</h2></div><button class="text-btn" data-nav="due">Alle</button></div>
+          <div id="upcomingMini" class="upcoming-list"></div>
+          <div id="upcomingMiniEmpty" class="empty-state">Noch keine Fälligkeiten mit Datum hinterlegt.</div>
         </article>
 
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">AUSGABEN</span><h2>Top-Kategorien</h2></div><button class="text-btn" data-nav="transactions">Alle</button></div>
+          <div class="panel-head wrap"><div><span class="panel-kicker">AUSGABEN</span><h2>Analyse</h2></div><div id="analysisRange" class="chips compact"><button data-range="30d" class="active">30T</button><button data-range="3m">3M</button><button data-range="6m">6M</button><button data-range="1y">1J</button></div></div>
+          <div class="analysis-summary"><div><span>Zeitraum</span><strong id="analysisSpent">0,00 €</strong></div><div><span>vs. davor</span><strong id="analysisCompare">—</strong></div></div>
+          <canvas id="trendChart" aria-label="Ausgabenentwicklung"></canvas>
           <div id="categoryBars" class="bars"></div>
-          <div id="categoryEmpty" class="empty-state">Noch keine Buchungen in diesem Monat.</div>
+          <div id="categoryEmpty" class="empty-state">Noch keine Buchungen im Zeitraum.</div>
         </article>
 
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">TREND</span><h2>Ausgaben der letzten 6 Monate</h2></div></div>
-          <canvas id="trendChart" width="800" height="280" aria-label="Ausgabentrend"></canvas>
+          <div class="panel-head"><div><span class="panel-kicker">PLAN</span><h2>Monatlicher Durchschnitt</h2></div><button class="text-btn" data-nav="plan">Bearbeiten</button></div>
+          <div id="flowRows" class="flow-list"></div>
         </article>
       </section>
 
       <section id="planView" class="view">
-        <div class="section-intro">
-          <p>Hier legst du einmal fest, was monatlich reinkommt und fest rausgeht. Das Dashboard rechnet automatisch.</p>
-        </div>
+        <p class="section-intro">Hier pflegst du Einkommen, wiederkehrende Zahlungen und deinen Gehaltstag. Jährliche Kosten bleiben als echte Jahresabbuchung erhalten – zusätzlich zeigt Finance OS den Monatsdurchschnitt.</p>
+
+        <article class="panel">
+          <div class="panel-head"><div><span class="panel-kicker">GEHALTSZYKLUS</span><h2>Wann startet dein Finanzmonat?</h2></div></div>
+          <div class="setting-row"><div><strong>Gehaltstag</strong><small>z. B. 28. → Zyklus 28. bis 27.</small></div><input id="salaryDayInput" type="number" min="1" max="31" inputmode="numeric" /></div>
+          <div id="salaryCyclePreview" class="helper"></div>
+        </article>
+
         <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">EINNAHMEN</span><h2>Monatliches Einkommen</h2></div><button class="text-btn" id="addIncomeBtn">＋ Hinzufügen</button></div>
+          <div class="panel-head"><div><span class="panel-kicker">EINNAHMEN</span><h2>Monatliches Einkommen</h2></div><button id="addIncomeBtn" class="pill-btn">Hinzufügen</button></div>
           <div id="incomeList" class="edit-list"></div>
         </article>
+
         <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">FIXKOSTEN</span><h2>Regelmäßige Ausgaben</h2></div><button class="text-btn" id="addFixedBtn">＋ Hinzufügen</button></div>
+          <div class="panel-head"><div><span class="panel-kicker">FIXKOSTEN</span><h2>Wiederkehrende Abbuchungen</h2></div><button id="addFixedBtn" class="pill-btn">Hinzufügen</button></div>
           <div id="fixedList" class="edit-list"></div>
+          <p class="helper">Betrag = tatsächliche Abbuchung. Beispiel ADAC: 94 € jährlich, nicht 7,83 € monatlich. Den Monatsdurchschnitt rechnet Finance OS selbst.</p>
         </article>
+
         <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">SPAREN</span><h2>Sparpläne & Rücklagen</h2></div><button class="text-btn" id="addSavingBtn">＋ Hinzufügen</button></div>
+          <div class="panel-head"><div><span class="panel-kicker">SPAREN</span><h2>Sparpläne / Rücklagen</h2></div><button id="addSavingBtn" class="pill-btn">Hinzufügen</button></div>
           <div id="savingList" class="edit-list"></div>
         </article>
+
         <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">OPTIONAL</span><h2>Weitere Verpflichtungen</h2></div><button class="text-btn" id="addDebtPaymentBtn">＋ Hinzufügen</button></div>
+          <div class="panel-head"><div><span class="panel-kicker">OPTIONAL</span><h2>Raten / Verpflichtungen</h2></div><button id="addDebtPaymentBtn" class="pill-btn">Hinzufügen</button></div>
           <div id="debtPaymentList" class="edit-list"></div>
         </article>
+
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">BUDGET</span><h2>Monatsbudget</h2></div></div>
-          <div class="segmented" id="budgetModeSwitch">
-            <button data-mode="auto" class="active">Automatisch</button>
-            <button data-mode="manual">Manuell</button>
-          </div>
-          <div class="budget-summary">
-            <div><span>Automatisch verfügbar</span><strong id="autoBudgetValue">0 €</strong></div>
-            <label id="manualBudgetWrap" class="money-input hidden"><span>Eigenes Monatsbudget</span><input id="manualBudgetInput" type="text" inputmode="decimal" autocomplete="off" placeholder="z. B. 850,50" /></label>
-          </div>
-          <p class="helper">Automatisch = Einkommen − Fixkosten − Sparen − optionale Raten. Manuell setzt nur ein niedrigeres Ausgabenlimit und kann dein verfügbares Budget nicht erhöhen.</p>
+          <div class="panel-head"><div><span class="panel-kicker">BUDGET</span><h2>Variables Limit</h2></div></div>
+          <div id="budgetModeSwitch" class="segmented"><button data-mode="auto" class="active">Automatisch</button><button data-mode="manual">Eigenes Limit</button></div>
+          <div class="budget-summary"><div><span>Ø maximal / Monat</span><strong id="averageBudgetValue">0,00 €</strong></div><div><span>Aktueller Zyklus</span><strong id="cycleBudgetValue">0,00 €</strong></div></div>
+          <label id="manualBudgetWrap" class="money-input hidden"><span>Eigenes Limit pro Gehaltszyklus</span><input id="manualBudgetInput" data-money="1" type="text" inputmode="decimal" placeholder="0,00" /><small id="manualBudgetPreview" class="money-preview"></small></label>
         </article>
       </section>
 
       <section id="transactionsView" class="view">
-        <div class="section-intro row-between">
-          <p>Nur variable Ausgaben eintragen. Fixkosten kommen aus dem Plan und werden hier nicht doppelt erfasst.</p>
-          <button id="addTransactionBtn" class="pill-btn">＋ Ausgabe</button>
-        </div>
-        <article class="panel compact-panel">
-          <div class="filters">
-            <input id="monthFilter" type="month" />
-            <select id="categoryFilter"><option value="">Alle Kategorien</option></select>
-          </div>
-          <div class="transaction-summary"><span>Summe</span><strong id="filteredTransactionSum">0 €</strong></div>
+        <div class="row-between section-toolbar"><div><p class="section-intro no-margin">Variable Ausgaben erfassen und nach Zeitraum, Kategorie oder Text filtern.</p></div><button id="addTransactionBtn" class="pill-btn">+ Ausgabe</button></div>
+        <article class="panel">
+          <div class="filters filters-3"><input id="monthFilter" type="month" /><select id="categoryFilter"><option value="">Alle Kategorien</option></select><input id="searchFilter" type="search" placeholder="Suche" /></div>
+          <div class="transaction-summary"><span>Gefiltert</span><strong id="filteredTransactionSum">0,00 €</strong></div>
         </article>
         <div id="transactionList" class="transaction-list"></div>
-        <div id="transactionEmpty" class="empty-state large">Keine Buchungen für diesen Zeitraum.</div>
+        <div id="transactionEmpty" class="empty-state large">Noch keine passenden Buchungen.</div>
+      </section>
+
+      <section id="dueView" class="view">
+        <article class="hero-card compact-hero">
+          <div class="hero-label">Bis zum nächsten Gehalt</div>
+          <div id="dueTotalUntilSalary" class="hero-value small">0,00 €</div>
+          <div id="dueSalarySub" class="hero-sub">Geplante Abbuchungen</div>
+        </article>
+        <div class="kpi-grid two">
+          <article class="kpi-card"><span>Nächste 30 Tage</span><strong id="due30Total">0,00 €</strong><small id="due30Count">0 Abbuchungen</small></article>
+          <article class="kpi-card"><span>Ohne Fälligkeit</span><strong id="undatedCount">0</strong><small>Bitte im Plan ergänzen</small></article>
+        </div>
+
+        <article class="panel">
+          <div class="panel-head"><div><span class="panel-kicker">KALENDER</span><h2 id="calendarTitle">Monat</h2></div><div class="calendar-nav"><button id="calendarPrev" class="mini-btn">‹</button><button id="calendarToday" class="mini-btn wide">Heute</button><button id="calendarNext" class="mini-btn">›</button></div></div>
+          <div class="calendar-weekdays"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
+          <div id="calendarGrid" class="calendar-grid"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><div><span class="panel-kicker">FÄLLIGKEITEN</span><h2 id="dueListTitle">Diesen Monat</h2></div></div>
+          <div id="dueList" class="due-list"></div>
+          <div id="dueEmpty" class="empty-state">In diesem Monat ist nichts geplant.</div>
+        </article>
       </section>
 
       <section id="wealthView" class="view">
-        <div class="section-intro"><p>Einmal einrichten und bei Bedarf aktualisieren. Verbindlichkeiten sind komplett optional.</p></div>
-        <article class="wealth-hero">
-          <span>Nettovermögen</span><strong id="wealthNetWorth">0 €</strong><small id="wealthBreakdown">0 € Vermögen − 0 € Verbindlichkeiten</small>
-        </article>
+        <article class="wealth-hero"><span>Nettovermögen</span><strong id="wealthNetWorth">0,00 €</strong><small id="wealthBreakdown">0,00 € Vermögen</small></article>
+
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">AUFTEILUNG</span><h2>Wo dein Vermögen liegt</h2></div></div>
-          <canvas id="allocationChart" width="800" height="280" aria-label="Vermögensaufteilung"></canvas>
-          <div id="allocationLegend" class="chart-legend"></div>
-          <div id="allocationEmpty" class="empty-state">Noch kein Vermögen eingetragen.</div>
+          <div class="panel-head"><div><span class="panel-kicker">INVESTMENTS</span><h2>Performance</h2></div><span id="portfolioPerformanceBadge" class="badge">—</span></div>
+          <div class="investment-summary"><div><span>Wert heute</span><strong id="portfolioValue">0,00 €</strong></div><div><span>Investiert</span><strong id="portfolioCost">0,00 €</strong></div><div><span>Gewinn / Verlust</span><strong id="portfolioGain">0,00 €</strong></div></div>
+          <div id="investmentRange" class="chips"><button data-range="1m">1M</button><button data-range="3m">3M</button><button data-range="1y">1J</button><button data-range="max" class="active">MAX</button></div>
+          <canvas id="investmentChart" aria-label="Investmententwicklung"></canvas>
+          <p id="investmentChartNote" class="helper"></p>
         </article>
-        <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">ENTWICKLUNG</span><h2>Nettovermögen</h2></div></div>
-          <canvas id="netWorthChart" width="800" height="280" aria-label="Nettovermögensentwicklung"></canvas>
-          <p id="netWorthChartNote" class="chart-note">Die Entwicklung entsteht automatisch, wenn du deine Konten und Anlagen im Laufe der Zeit aktualisierst.</p>
-        </article>
+
         <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">VERMÖGEN</span><h2>Konten & Anlagen</h2></div><button class="text-btn" id="addAssetBtn">＋ Hinzufügen</button></div>
+          <div class="panel-head"><div><span class="panel-kicker">KONTEN & ANLAGEN</span><h2>Vermögen</h2></div><button id="addAssetBtn" class="pill-btn">Hinzufügen</button></div>
           <div id="assetList" class="edit-list"></div>
         </article>
-        <article class="panel editor-panel optional-panel">
-          <div class="panel-head"><div><span class="panel-kicker">OPTIONAL</span><h2>Verbindlichkeiten (optional)</h2></div><button class="text-btn" id="addLiabilityBtn">＋ Hinzufügen</button></div>
-          <div id="liabilityList" class="edit-list"></div>
-          <p class="helper">Leer lassen, wenn du keine Schulden oder Kredite hast.</p>
+
+        <article class="panel">
+          <div class="panel-head"><div><span class="panel-kicker">AUFTEILUNG</span><h2>Wo steckt dein Vermögen?</h2></div></div>
+          <canvas id="allocationChart"></canvas><div id="allocationLegend" class="legend-list"></div><div id="allocationEmpty" class="empty-state">Noch kein Vermögen eingetragen.</div>
         </article>
+
+        <article class="panel">
+          <div class="panel-head"><div><span class="panel-kicker">VERLAUF</span><h2>Nettovermögen</h2></div></div>
+          <canvas id="netWorthChart"></canvas><p id="netWorthChartNote" class="helper"></p>
+        </article>
+
+        <article class="panel editor-panel">
+          <div class="panel-head"><div><span class="panel-kicker">OPTIONAL</span><h2>Verbindlichkeiten</h2></div><button id="addLiabilityBtn" class="pill-btn">Hinzufügen</button></div>
+          <div id="liabilityList" class="edit-list"></div>
+        </article>
+
         <article class="panel">
           <div class="panel-head"><div><span class="panel-kicker">DATEN</span><h2>Backup & Einstellungen</h2></div></div>
-          <div class="data-status">
-            <div><span>Lokaler Speicher</span><strong id="storageStatus">Wird geprüft…</strong><button id="persistBtn" class="tiny-btn hidden" type="button">Speicher schützen</button></div>
-            <div><span>Letztes Backup</span><strong id="lastBackupStatus">Noch keines</strong></div>
-          </div>
-          <div id="backupWarning" class="backup-warning">Backup empfohlen: Deine Daten sind lokal auf diesem iPhone. Exportiere regelmäßig eine Sicherung in die Dateien-/iCloud-App.</div>
-          <div class="action-grid">
-            <button id="exportBtn" class="action-btn">Backup exportieren</button>
-            <label class="action-btn file-btn">Backup importieren<input id="importInput" type="file" accept="application/json" /></label>
-            <button id="restoreBtn" class="action-btn">Letzten lokalen Stand</button>
-            <button id="resetBtn" class="action-btn danger">Alle Daten löschen</button>
-          </div>
-          <p class="helper">Keine Finanzdaten werden an GitHub übertragen. GitHub hostet nur den öffentlichen App-Code. Deine Einträge liegen lokal in der Datenbank dieser Home-Screen-App.</p>
+          <div class="data-status"><div><span>Lokaler Speicher</span><strong id="storageStatus">Wird geprüft…</strong><button id="persistBtn" class="tiny-btn hidden" type="button">Speicher schützen</button></div><div><span>Letztes Backup</span><strong id="lastBackupStatus">Noch keines</strong></div></div>
+          <div id="backupWarning" class="backup-warning">Backup empfohlen: Deine Daten sind lokal auf diesem Gerät. Exportiere regelmäßig eine Sicherung.</div>
+          <div class="action-grid"><button id="exportBtn" class="action-btn">Backup exportieren</button><label class="action-btn file-btn">Backup importieren<input id="importInput" type="file" accept="application/json" /></label><button id="restoreBtn" class="action-btn">Letzten lokalen Stand</button><button id="resetBtn" class="action-btn danger">Alle Daten löschen</button></div>
+          <p class="helper">Keine Finanzdaten werden an GitHub übertragen. GitHub hostet nur den öffentlichen App-Code. Deine Einträge liegen lokal in IndexedDB.</p>
           <div class="app-version" id="appVersionLabel">Finance OS</div>
         </article>
       </section>
@@ -168,12 +175,13 @@
       <button class="nav-item active" data-view="dashboard"><span>◫</span><small>Home</small></button>
       <button class="nav-item" data-view="plan"><span>⌁</span><small>Plan</small></button>
       <button class="nav-item" data-view="transactions"><span>≡</span><small>Buchungen</small></button>
+      <button class="nav-item" data-view="due"><span>▦</span><small>Fällig</small></button>
       <button class="nav-item" data-view="wealth"><span>◇</span><small>Vermögen</small></button>
     </nav>
   </div>
 
   <dialog id="entryDialog">
-    <form method="dialog" id="entryForm" class="modal-card">
+    <form id="entryForm" class="modal-card">
       <div class="modal-head"><div><span class="panel-kicker" id="dialogKicker">NEU</span><h2 id="dialogTitle">Eintrag</h2></div><button type="button" data-dialog-cancel class="icon-btn">×</button></div>
       <div id="dialogFields"></div>
       <div class="modal-actions"><button type="button" data-dialog-cancel class="secondary-btn">Abbrechen</button><button id="dialogSaveBtn" type="submit" class="primary-btn">Speichern</button></div>
@@ -181,79 +189,6 @@
   </dialog>
 
   <div id="toast" class="toast"></div>
-  <script>
-const APP_VERSION='1.2.0', DB_NAME='finance-os-db', DB_VERSION=2, STORE='state', SNAPSHOTS='snapshots';
-const defaultState={
-  version:3,
-  meta:{lastSavedAt:null,lastBackupAt:null},
-  settings:{currency:'EUR',budgetMode:'auto',manualBudget:0},
-  incomes:[], fixedCosts:[], savings:[], debtPayments:[], transactions:[], assets:[], liabilities:[],
-  history:{netWorth:[]}
-};
-const categories=['Lebensmittel','Restaurant','Kaffee','Rauchen','Freizeit','Party','Shopping','Auto','Reisen','Gesundheit','Games','Sonstiges'];
-let state=structuredClone(defaultState), editing=null;
-
-function normalizeState(data){const d=(data&&typeof data==='object')?data:{};return {...structuredClone(defaultState),...d,version:3,meta:{...defaultState.meta,...(d.meta||{})},settings:{...defaultState.settings,...(d.settings||{})},incomes:Array.isArray(d.incomes)?d.incomes:[],fixedCosts:Array.isArray(d.fixedCosts)?d.fixedCosts:[],savings:Array.isArray(d.savings)?d.savings:[],debtPayments:Array.isArray(d.debtPayments)?d.debtPayments:[],transactions:Array.isArray(d.transactions)?d.transactions:[],assets:Array.isArray(d.assets)?d.assets.map(a=>({...a,costBasis:Number(a.costBasis)||0})):[],liabilities:Array.isArray(d.liabilities)?d.liabilities:[],history:{netWorth:Array.isArray(d.history?.netWorth)?d.history.netWorth:[]}}}
-function openDB(){return new Promise((resolve,reject)=>{const r=indexedDB.open(DB_NAME,DB_VERSION);r.onupgradeneeded=()=>{const db=r.result;if(!db.objectStoreNames.contains(STORE))db.createObjectStore(STORE);if(!db.objectStoreNames.contains(SNAPSHOTS))db.createObjectStore(SNAPSHOTS)};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);r.onblocked=()=>reject(new Error('Datenbank-Update blockiert'))})}
-async function loadState(){try{const db=await openDB();return await new Promise(res=>{const tx=db.transaction(STORE,'readonly'),g=tx.objectStore(STORE).get('main');g.onsuccess=()=>res(normalizeState(g.result));g.onerror=()=>res(structuredClone(defaultState))})}catch(e){console.error(e);return structuredClone(defaultState)}}
-async function trimSnapshots(db){return new Promise(res=>{const tx=db.transaction(SNAPSHOTS,'readwrite'),store=tx.objectStore(SNAPSHOTS),req=store.getAllKeys();req.onsuccess=()=>{const keys=req.result.sort();while(keys.length>20)store.delete(keys.shift())};tx.oncomplete=res;tx.onerror=res})}
-async function saveState(){try{recordNetWorthPoint();const db=await openDB();const previous=await new Promise(res=>{const tx=db.transaction(STORE,'readonly'),g=tx.objectStore(STORE).get('main');g.onsuccess=()=>res(g.result||null);g.onerror=()=>res(null)});state.meta={...defaultState.meta,...(state.meta||{}),lastSavedAt:new Date().toISOString()};await new Promise((res,rej)=>{const tx=db.transaction([STORE,SNAPSHOTS],'readwrite');if(previous)tx.objectStore(SNAPSHOTS).put(previous,`${new Date().toISOString()}-${id()}`);tx.objectStore(STORE).put(state,'main');tx.oncomplete=res;tx.onerror=()=>rej(tx.error);tx.onabort=()=>rej(tx.error||new Error('Speichern abgebrochen'))});await trimSnapshots(db);return true}catch(e){console.error(e);alert('Speichern fehlgeschlagen. Bitte sofort ein Backup exportieren und freien Gerätespeicher prüfen.');return false}}
-async function restoreLastSnapshot(){const db=await openDB();const snap=await new Promise(res=>{const tx=db.transaction(SNAPSHOTS,'readonly'),r=tx.objectStore(SNAPSHOTS).getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>res([])});if(!snap.length){toast('Noch kein lokaler Stand vorhanden');return}if(!confirm('Den letzten lokalen Stand wiederherstellen? Der aktuelle Stand bleibt als Snapshot erhalten.'))return;state=normalizeState(snap[snap.length-1]);await saveState();render();toast('Lokaler Stand wiederhergestellt')}
-let storagePersistent=false;
-async function updateStorageStatus(request=false){const el=document.getElementById('storageStatus'),btn=document.getElementById('persistBtn');try{if(navigator.storage?.persisted){storagePersistent=await navigator.storage.persisted();if(!storagePersistent&&request&&navigator.storage.persist)storagePersistent=await navigator.storage.persist()}el.textContent=storagePersistent?'Geschützt':'Standard';el.className=storagePersistent?'status-good':'status-warn';btn.classList.toggle('hidden',storagePersistent||!navigator.storage?.persist)}catch{el.textContent='Standard';el.className='status-warn';btn.classList.remove('hidden')}}
-function hasUserData(){return state.incomes.length+state.fixedCosts.length+state.savings.length+state.debtPayments.length+state.transactions.length+state.assets.length+state.liabilities.length>0}
-function renderDataSafety(){const d=state.meta?.lastBackupAt?new Date(state.meta.lastBackupAt):null;document.getElementById('lastBackupStatus').textContent=d?d.toLocaleString('de-DE',{dateStyle:'medium',timeStyle:'short'}):'Noch keines';const age=d?(Date.now()-d.getTime())/86400000:999;document.getElementById('backupWarning').classList.toggle('show',hasUserData()&&age>=7);document.getElementById('appVersionLabel').textContent=`Finance OS ${APP_VERSION} · lokal auf diesem Gerät`}
-function id(){return crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2)}
-function money(n){return new Intl.NumberFormat('de-DE',{style:'currency',currency:state.settings.currency||'EUR',maximumFractionDigits:2}).format(Number(n)||0)}
-function numberInput(n){if(n===null||n===undefined||n==='')return '';const v=Number(n);return Number.isFinite(v)?String(v).replace('.',','):''}
-function parseNumber(value){let s=String(value??'').trim().replace(/\s|€|'/g,'');if(!s)return 0;const comma=s.lastIndexOf(','),dot=s.lastIndexOf('.');if(comma>=0&&dot>=0){const decimal=comma>dot?',':'.',group=decimal===','?'.':',';s=s.split(group).join('');if(decimal===',')s=s.replace(',','.')}else if(comma>=0){s=s.replace(/\./g,'').replace(',','.')}else if((s.match(/\./g)||[]).length>1){const parts=s.split('.');const dec=parts.pop();s=parts.join('')+'.'+dec}const n=Number(s);return Number.isFinite(n)?n:NaN}
-function percent(n){return new Intl.NumberFormat('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(n)||0)+' %'}
-function isInvestmentType(type){return ['ETF','Aktien','Krypto','Investment'].includes(type)}
-function recordNetWorthPoint(){state.history=state.history||{netWorth:[]};state.history.netWorth=Array.isArray(state.history.netWorth)?state.history.netWorth:[];const today=new Date().toISOString().slice(0,10),value=sum(state.assets,'value')-sum(state.liabilities,'balance'),last=state.history.netWorth[state.history.netWorth.length-1];if(last?.date===today)last.value=value;else state.history.netWorth.push({date:today,value});if(state.history.netWorth.length>365)state.history.netWorth=state.history.netWorth.slice(-365)}
-function sum(arr,key='amount'){return arr.reduce((a,x)=>a+(Number(x[key])||0),0)}
-function esc(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-function monthKey(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`}
-function calc(){
-  const income=sum(state.incomes), fixed=sum(state.fixedCosts), saving=sum(state.savings), debt=sum(state.debtPayments);
-  const autoBudget=Math.max(0,income-fixed-saving-debt);
-  const budget=state.settings.budgetMode==='manual'?Math.max(0,Math.min(autoBudget,Number(state.settings.manualBudget)||0)):autoBudget;
-  const mk=monthKey(); const txMonth=state.transactions.filter(t=>String(t.date||'').slice(0,7)===mk); const spent=sum(txMonth);
-  const cash=sum(state.assets.filter(a=>['Konto','Cash','Tagesgeld'].includes(a.type)),'value');
-  const investmentAssets=state.assets.filter(a=>isInvestmentType(a.type)),investments=sum(investmentAssets,'value'),investmentCost=sum(investmentAssets,'costBasis'),investmentGain=investmentCost?investments-investmentCost:0,investmentPct=investmentCost?(investmentGain/investmentCost)*100:0;
-  const assets=sum(state.assets,'value'), liabilities=sum(state.liabilities,'balance');
-  return {income,fixed,saving,debt,autoBudget,budget,spent,remaining:budget-spent,cash,investments,investmentCost,investmentGain,investmentPct,assets,liabilities,netWorth:assets-liabilities,txMonth};
-}
-function setView(name){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.querySelector(`#${name}View`).classList.add('active');document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===name));document.getElementById('pageTitle').textContent={dashboard:'Dashboard',plan:'Plan',transactions:'Buchungen',wealth:'Vermögen'}[name];render();window.scrollTo({top:0,behavior:'smooth'})}
-function render(){renderDashboard();renderPlan();renderTransactions();renderWealth();renderDataSafety()}
-function renderDashboard(){const c=calc();
-  const rem=document.getElementById('remainingBudget'); rem.textContent=money(c.remaining); rem.classList.toggle('negative',c.remaining<0); rem.classList.toggle('positive',c.remaining>=0&&c.budget>0);
-  document.getElementById('budgetSub').textContent=`von ${money(c.budget)} Monatsbudget`;
-  document.getElementById('budgetProgress').style.width=`${c.budget?Math.min(100,(c.spent/c.budget)*100):0}%`;
-  document.getElementById('netWorth').textContent=money(c.netWorth);document.getElementById('netWorth').className=c.netWorth<0?'negative':'';
-  document.getElementById('cashTotal').textContent=money(c.cash);document.getElementById('investmentTotal').textContent=money(c.investments);document.getElementById('spentMonth').textContent=money(c.spent);const invHint=document.getElementById('investmentHint');invHint.textContent=c.investmentCost?`${c.investmentGain>=0?'+':''}${money(c.investmentGain)} · ${c.investmentGain>=0?'+':''}${percent(c.investmentPct)}`:'ETF, Aktien, Krypto';invHint.className=c.investmentCost?(c.investmentGain>=0?'positive':'negative'):'';const perf=document.getElementById('investmentPerformancePanel');perf.classList.toggle('hidden',!c.investmentCost);if(c.investmentCost){const gain=document.getElementById('investmentPerformanceValue'),pct=document.getElementById('investmentPerformancePct'),fill=document.getElementById('investmentPerformanceFill');gain.textContent=`${c.investmentGain>=0?'+':''}${money(c.investmentGain)}`;gain.className=c.investmentGain>=0?'positive':'negative';pct.textContent=`${c.investmentGain>=0?'+':''}${percent(c.investmentPct)}`;pct.className=`badge ${c.investmentGain<0?'negative':''}`;document.getElementById('investmentPerformanceSub').textContent=`${money(c.investments)} Wert heute − ${money(c.investmentCost)} Einstand`;fill.style.width=`${Math.min(100,Math.abs(c.investmentPct))}%`;fill.style.background=c.investmentGain>=0?'var(--accent)':'var(--danger)'}
-  const rate=c.income?Math.round((c.saving/c.income)*100):0;document.getElementById('savingsRateBadge').textContent=`${rate} % Sparquote`;
-  const flows=[['Einnahmen',c.income],['Fixkosten',-c.fixed],['Sparen / Investieren',-c.saving],...(c.debt>0?[['Optionale Raten',-c.debt]]:[]),['Variables Budget',c.budget],['Bisher ausgegeben',-c.spent],['Noch frei',c.remaining]];
-  document.getElementById('flowRows').innerHTML=flows.map((x,i)=>`<div class="flow-row ${i===flows.length-1?'total':''}"><span>${x[0]}</span><strong class="${x[1]<0?'negative':''}">${money(x[1])}</strong></div>`).join('');
-  const cats=Object.entries(c.txMonth.reduce((m,t)=>(m[t.category]=(m[t.category]||0)+Number(t.amount||0),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,6); const max=cats[0]?.[1]||1;
-  document.getElementById('categoryBars').innerHTML=cats.map(([k,v])=>`<div class="bar-row"><div class="bar-label">${esc(k)}</div><div class="bar-track"><div class="bar-fill" style="width:${v/max*100}%"></div></div><div class="bar-value">${money(v)}</div></div>`).join(''); document.getElementById('categoryEmpty').style.display=cats.length?'none':'block'; drawTrend();
-}
-function drawTrend(){const canvas=document.getElementById('trendChart'),ctx=canvas.getContext('2d'),dpr=window.devicePixelRatio||1,w=canvas.clientWidth,h=160;canvas.width=w*dpr;canvas.height=h*dpr;ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);
-  const months=[];for(let i=5;i>=0;i--){const d=new Date();d.setDate(1);d.setMonth(d.getMonth()-i);const key=monthKey(d);months.push({key,label:d.toLocaleDateString('de-DE',{month:'short'}),value:sum(state.transactions.filter(t=>String(t.date||'').slice(0,7)===key))})}const max=Math.max(...months.map(m=>m.value),1),left=10,right=w-10,top=12,bottom=h-28,step=(right-left)/(months.length-1||1);ctx.strokeStyle='#2a2a2a';ctx.lineWidth=1;for(let j=0;j<3;j++){const y=top+(bottom-top)*j/2;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke()}ctx.beginPath();months.forEach((m,i)=>{const x=left+i*step,y=bottom-(m.value/max)*(bottom-top);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.strokeStyle='#f2f2f2';ctx.lineWidth=2.4;ctx.stroke();months.forEach((m,i)=>{const x=left+i*step,y=bottom-(m.value/max)*(bottom-top);ctx.fillStyle='#f2f2f2';ctx.beginPath();ctx.arc(x,y,3.2,0,Math.PI*2);ctx.fill();ctx.fillStyle='#74747a';ctx.font='11px -apple-system';ctx.textAlign='center';ctx.fillText(m.label,x,h-8)})}
-
-function drawAllocation(){const canvas=document.getElementById('allocationChart');if(!canvas)return;const ctx=canvas.getContext('2d'),dpr=window.devicePixelRatio||1,w=canvas.clientWidth,h=160;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const groups=[['Cash',sum(state.assets.filter(a=>['Konto','Cash','Tagesgeld'].includes(a.type)),'value'),'#67f29a'],['Investments',sum(state.assets.filter(a=>isInvestmentType(a.type)),'value'),'#f4f4f4'],['Sonstiges',sum(state.assets.filter(a=>!['Konto','Cash','Tagesgeld'].includes(a.type)&&!isInvestmentType(a.type)),'value'),'#8e8e93']].filter(x=>x[1]>0),total=groups.reduce((a,x)=>a+x[1],0),legend=document.getElementById('allocationLegend'),empty=document.getElementById('allocationEmpty');legend.innerHTML=groups.map(([name,value,color])=>`<div class="legend-item"><span class="legend-dot" style="--legend-color:${color}"></span><span>${esc(name)} · ${money(value)}</span></div>`).join('');empty.style.display=total?'none':'block';const cx=w/2,cy=h/2,r=Math.min(58,w*.2),line=18;if(!total){ctx.strokeStyle='#252525';ctx.lineWidth=line;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.stroke();return}let start=-Math.PI/2;groups.forEach(([name,value,color])=>{const angle=Math.PI*2*(value/total);ctx.strokeStyle=color;ctx.lineWidth=line;ctx.lineCap='butt';ctx.beginPath();ctx.arc(cx,cy,r,start,start+angle);ctx.stroke();start+=angle});ctx.fillStyle='#f4f4f4';ctx.font='700 17px -apple-system,system-ui';ctx.textAlign='center';ctx.fillText(money(total),cx,cy+4);ctx.fillStyle='#8e8e93';ctx.font='11px -apple-system,system-ui';ctx.fillText('Vermögen',cx,cy+22)}
-function drawNetWorthHistory(){const canvas=document.getElementById('netWorthChart');if(!canvas)return;const ctx=canvas.getContext('2d'),dpr=window.devicePixelRatio||1,w=canvas.clientWidth,h=160;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const points=(state.history?.netWorth||[]).slice(-12),note=document.getElementById('netWorthChartNote');if(!points.length){ctx.strokeStyle='#252525';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(10,h/2);ctx.lineTo(w-10,h/2);ctx.stroke();note.textContent='Die Entwicklung entsteht automatisch, wenn du deine Konten und Anlagen im Laufe der Zeit aktualisierst.';return}const values=points.map(p=>Number(p.value)||0),min=Math.min(...values),max=Math.max(...values),range=Math.max(max-min,1),left=10,right=w-10,top=18,bottom=h-28,step=(right-left)/(Math.max(points.length-1,1));ctx.strokeStyle='#292929';ctx.lineWidth=1;[0,.5,1].forEach(f=>{const y=top+(bottom-top)*f;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke()});ctx.strokeStyle='#f4f4f4';ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.lineCap='round';ctx.beginPath();points.forEach((p,i)=>{const x=points.length===1?(left+right)/2:left+i*step,y=bottom-((Number(p.value)||0)-min)/range*(bottom-top);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();points.forEach((p,i)=>{const x=points.length===1?(left+right)/2:left+i*step,y=bottom-((Number(p.value)||0)-min)/range*(bottom-top);ctx.fillStyle='#67f29a';ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fill()});ctx.fillStyle='#8e8e93';ctx.font='10px -apple-system,system-ui';ctx.textAlign='left';ctx.fillText(new Date(points[0].date+'T12:00:00').toLocaleDateString('de-DE',{day:'2-digit',month:'short'}),left,h-8);ctx.textAlign='right';ctx.fillText(new Date(points[points.length-1].date+'T12:00:00').toLocaleDateString('de-DE',{day:'2-digit',month:'short'}),right,h-8);note.textContent=points.length<2?'Erster Stand gespeichert. Die Kurve wächst bei späteren Aktualisierungen automatisch.':`${points.length} gespeicherte Stände · lokal auf diesem Gerät`}
-function renderList(elId,arr,kind,subFn){const el=document.getElementById(elId);el.innerHTML=arr.length?arr.map(item=>{let sub=esc(subFn?subFn(item):'');if(kind==='asset'&&isInvestmentType(item.type)&&Number(item.costBasis)>0){const gain=(Number(item.value)||0)-(Number(item.costBasis)||0),pct=(gain/(Number(item.costBasis)||1))*100;sub+=` · <span class="asset-performance ${gain>=0?'positive':'negative'}">${gain>=0?'+':''}${money(gain)} (${gain>=0?'+':''}${percent(pct)})</span>`}return `<div class="edit-row"><div class="meta"><div class="name">${esc(item.name||'Ohne Namen')}</div><div class="sub">${sub}</div></div><div class="amount">${money(item.amount??item.value??item.balance)}</div><div class="mini-actions"><button class="mini-btn" data-edit-kind="${kind}" data-id="${item.id}">✎</button><button class="mini-btn" data-delete-kind="${kind}" data-id="${item.id}">×</button></div></div>`}).join(''):`<div class="empty-state" style="display:block">Noch nichts eingetragen.</div>`}
-function renderPlan(){const c=calc();renderList('incomeList',state.incomes,'income',()=> 'monatlich');renderList('fixedList',state.fixedCosts,'fixed',x=>x.dueDay?`fällig am ${x.dueDay}.`:'monatlich');renderList('savingList',state.savings,'saving',x=>x.type||'Sparen');renderList('debtPaymentList',state.debtPayments,'debtPayment',()=> 'monatliche Rate');document.getElementById('autoBudgetValue').textContent=money(c.autoBudget);document.querySelectorAll('#budgetModeSwitch button').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.settings.budgetMode));document.getElementById('manualBudgetWrap').classList.toggle('hidden',state.settings.budgetMode!=='manual');document.getElementById('manualBudgetInput').value=state.settings.manualBudget?numberInput(state.settings.manualBudget):''}
-function renderTransactions(){const m=document.getElementById('monthFilter');if(!m.value)m.value=monthKey();const cat=document.getElementById('categoryFilter');if(cat.options.length<=1)cat.innerHTML='<option value="">Alle Kategorien</option>'+categories.map(c=>`<option>${c}</option>`).join('');const filtered=state.transactions.filter(t=>(!m.value||String(t.date).slice(0,7)===m.value)&&(!cat.value||t.category===cat.value)).sort((a,b)=>String(b.date).localeCompare(String(a.date)));document.getElementById('filteredTransactionSum').textContent=money(sum(filtered));const list=document.getElementById('transactionList');list.innerHTML=filtered.map(t=>{const d=new Date(`${t.date}T12:00:00`);return `<div class="transaction-item" data-tx-id="${t.id}"><div class="transaction-date"><strong>${d.getDate()}</strong><small>${d.toLocaleDateString('de-DE',{month:'short'})}</small></div><div class="transaction-info"><strong>${esc(t.note||t.category)}</strong><small>${esc(t.category)}</small></div><div class="transaction-amount">−${money(t.amount)}<small><button class="text-btn" data-edit-kind="transaction" data-id="${t.id}">Bearbeiten</button></small></div></div>`}).join('');document.getElementById('transactionEmpty').style.display=filtered.length?'none':'block'}
-function renderWealth(){const c=calc();document.getElementById('wealthNetWorth').textContent=money(c.netWorth);document.getElementById('wealthNetWorth').className=c.netWorth<0?'negative':'';document.getElementById('wealthBreakdown').textContent=c.liabilities?`${money(c.assets)} Vermögen − ${money(c.liabilities)} Verbindlichkeiten`:`${money(c.assets)} Vermögen`;renderList('assetList',state.assets,'asset',x=>x.type||'Vermögen');renderList('liabilityList',state.liabilities,'liability',x=>x.type||'Verbindlichkeit');drawAllocation();drawNetWorthHistory()}
-function fieldsFor(kind,item={}){const today=new Date().toISOString().slice(0,10), moneyField=(label,val,key='amount',required=true)=>`<div class="field"><label>${label}</label><input name="${key}" data-money="1" type="text" inputmode="decimal" autocomplete="off" value="${numberInput(val)}" placeholder="0,00" ${required?'required':''}></div>`, nameField=(label='Name')=>`<div class="field"><label>${label}</label><input name="name" value="${esc(item.name||'')}" required></div>`;if(kind==='transaction')return `<div class="field"><label>Datum</label><input name="date" type="date" value="${item.date||today}" required></div>${moneyField('Betrag',item.amount)}<div class="field"><label>Kategorie</label><select name="category">${categories.map(c=>`<option ${item.category===c?'selected':''}>${c}</option>`).join('')}</select></div><div class="field"><label>Beschreibung (optional)</label><input name="note" value="${esc(item.note||'')}" placeholder="z. B. Sklavenitis"></div>`;if(kind==='income')return nameField('Einnahmequelle')+moneyField('Monatlicher Betrag',item.amount);if(kind==='fixed')return nameField('Fixkosten')+moneyField('Monatlicher Betrag',item.amount)+`<div class="field"><label>Fälligkeit (optional)</label><input name="dueDay" type="number" min="1" max="31" value="${item.dueDay||''}" placeholder="z. B. 15"></div>`;if(kind==='saving')return nameField('Sparplan / Rücklage')+moneyField('Monatlicher Betrag',item.amount)+`<div class="field"><label>Typ</label><select name="type">${['ETF','Tagesgeld','Rücklage','Sonstiges'].map(v=>`<option ${item.type===v?'selected':''}>${v}</option>`).join('')}</select></div>`;if(kind==='debtPayment')return nameField('Verpflichtung / Rate')+moneyField('Monatliche Rate',item.amount);if(kind==='asset'){const types=['Konto','Cash','Tagesgeld','ETF','Aktien','Krypto','Investment','Sonstiges'],showCost=isInvestmentType(item.type);return nameField('Konto / Anlage')+moneyField('Wert heute / aktueller Wert',item.value,'value')+`<div class="field"><label>Typ</label><select name="type" id="assetTypeSelect">${types.map(v=>`<option ${item.type===v?'selected':''}>${v}</option>`).join('')}</select></div><div id="costBasisField" class="${showCost?'':'hidden'}">${moneyField('Einstand / insgesamt investiert',item.costBasis,'costBasis',false)}<p class="helper">Nur für ETF, Aktien, Krypto oder andere Investments. Daraus berechnet Finance OS Gewinn/Verlust.</p></div>`}if(kind==='liability')return nameField('Verbindlichkeit')+moneyField('Restschuld',item.balance,'balance')+`<div class="field"><label>Typ</label><select name="type">${['Kredit','Kreditkarte','Privat','Immobilie','Sonstiges'].map(v=>`<option ${item.type===v?'selected':''}>${v}</option>`).join('')}</select></div>`}
-function arrFor(kind){return ({income:state.incomes,fixed:state.fixedCosts,saving:state.savings,debtPayment:state.debtPayments,transaction:state.transactions,asset:state.assets,liability:state.liabilities})[kind]}
-function openEntry(kind,item=null){editing={kind,id:item?.id||null};const names={transaction:['AUSGABE','Neue Buchung'],income:['PLAN','Einnahme'],fixed:['PLAN','Fixkosten'],saving:['PLAN','Sparplan'],debtPayment:['OPTIONAL','Weitere Verpflichtung'],asset:['VERMÖGEN','Konto / Anlage'],liability:['OPTIONAL','Verbindlichkeit']};document.getElementById('dialogKicker').textContent=names[kind][0];document.getElementById('dialogTitle').textContent=(item?'Bearbeiten: ':'')+names[kind][1];document.getElementById('dialogFields').innerHTML=fieldsFor(kind,item||{});document.getElementById('entryDialog').showModal();if(kind==='asset'){const select=document.getElementById('assetTypeSelect'),cost=document.getElementById('costBasisField');const sync=()=>cost?.classList.toggle('hidden',!isInvestmentType(select?.value));select?.addEventListener('change',sync);sync()}}
-async function saveEntry(){const form=document.getElementById('entryForm'),f=new FormData(form),obj={};for(const [k,v] of f.entries())obj[k]=v;for(const input of form.querySelectorAll('[data-money]')){const n=parseNumber(input.value);if(!Number.isFinite(n)||n<0){input.focus();alert('Bitte eine gültige Zahl eingeben, z. B. 123,45.');return false}obj[input.name]=n}if('dueDay'in obj)obj.dueDay=obj.dueDay===''?0:Number(obj.dueDay);const arr=arrFor(editing.kind);if(editing.id){const idx=arr.findIndex(x=>x.id===editing.id);if(idx>=0)arr[idx]={...arr[idx],...obj}}else arr.push({id:id(),...obj});const ok=await saveState();if(!ok)return false;render();toast('Gespeichert');return true}
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
-function bind(){document.querySelectorAll('.nav-item').forEach(b=>b.onclick=()=>setView(b.dataset.view));document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>setView(b.dataset.nav));document.querySelectorAll('[data-dialog-cancel]').forEach(b=>b.onclick=()=>{editing=null;document.getElementById('entryDialog').close()});document.getElementById('entryDialog').addEventListener('cancel',()=>{editing=null});document.getElementById('quickAddBtn').onclick=()=>openEntry('transaction');document.getElementById('addTransactionBtn').onclick=()=>openEntry('transaction');[['addIncomeBtn','income'],['addFixedBtn','fixed'],['addSavingBtn','saving'],['addDebtPaymentBtn','debtPayment'],['addAssetBtn','asset'],['addLiabilityBtn','liability']].forEach(([el,k])=>document.getElementById(el).onclick=()=>openEntry(k));document.body.addEventListener('click',async e=>{const edit=e.target.closest('[data-edit-kind]');if(edit){const arr=arrFor(edit.dataset.editKind),item=arr.find(x=>x.id===edit.dataset.id);openEntry(edit.dataset.editKind,item)}const del=e.target.closest('[data-delete-kind]');if(del&&confirm('Eintrag wirklich löschen?')){const arr=arrFor(del.dataset.deleteKind),idx=arr.findIndex(x=>x.id===del.dataset.id);if(idx>=0)arr.splice(idx,1);await saveState();render()}});document.getElementById('entryForm').addEventListener('submit',async e=>{e.preventDefault();if(await saveEntry()){editing=null;document.getElementById('entryDialog').close()}});document.querySelectorAll('#budgetModeSwitch button').forEach(b=>b.onclick=async()=>{state.settings.budgetMode=b.dataset.mode;await saveState();render()});document.getElementById('manualBudgetInput').onchange=async e=>{const n=parseNumber(e.target.value);if(!Number.isFinite(n)||n<0){alert('Bitte eine gültige Zahl eingeben, z. B. 850,50.');renderPlan();return}state.settings.manualBudget=n;await saveState();render()};document.getElementById('monthFilter').onchange=renderTransactions;document.getElementById('categoryFilter').onchange=renderTransactions;document.getElementById('exportBtn').onclick=async()=>{state.meta={...defaultState.meta,...(state.meta||{}),lastBackupAt:new Date().toISOString()};const payload={format:'finance-os-backup',version:3,appVersion:APP_VERSION,exportedAt:state.meta.lastBackupAt,state};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`finance-os-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);await saveState();render();toast('Backup erstellt')};document.getElementById('importInput').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const raw=JSON.parse(await file.text()),data=raw?.format==='finance-os-backup'?raw.state:raw;state=normalizeState(data);await saveState();render();toast('Backup importiert')}catch{alert('Backup konnte nicht gelesen werden. Die Datei wurde nicht übernommen.')}finally{e.target.value=''}};document.getElementById('restoreBtn').onclick=restoreLastSnapshot;document.getElementById('persistBtn').onclick=async()=>{await updateStorageStatus(true);renderDataSafety();toast(storagePersistent?'Speicher geschützt':'Schutz konnte nicht erzwungen werden')};document.getElementById('resetBtn').onclick=async()=>{if(confirm('Wirklich ALLE Finanzdaten auf diesem Gerät löschen?')){state=structuredClone(defaultState);await saveState();render();toast('Daten gelöscht')}};window.addEventListener('resize',()=>{drawTrend();drawAllocation();drawNetWorthHistory()})}
-(async()=>{state=await loadState();bind();render();await updateStorageStatus(true);if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./service-worker.js',{scope:'./'});reg.update().catch(()=>{})}catch(e){console.warn('Service Worker nicht verfügbar',e)}}})();
-
-  </script>
+  <script src="./app.js" defer></script>
 </body>
 </html>
