@@ -1,4 +1,4 @@
-const CACHE='finance-os-v1.1.0';
+const CACHE='finance-os-v1.2.0';
 const CORE=['./','./index.html','./manifest.webmanifest'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));
