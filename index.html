@@ -7,188 +7,103 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Finance OS" />
+  <meta name="format-detection" content="telephone=no" />
   <title>Finance OS</title>
   <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <div id="updateBanner" class="update-banner hidden" role="status">
+    <div><strong>Neue Version verfügbar</strong><small id="updateVersionText">Finance OS kann aktualisiert werden.</small></div>
+    <button id="updateNowBtn" class="tiny-primary" type="button">Jetzt aktualisieren</button>
+  </div>
+
   <div id="app">
     <header class="topbar">
-      <div>
-        <div class="eyebrow">FINANCE OS</div>
-        <h1 id="pageTitle">Dashboard</h1>
-      </div>
-      <button id="quickAddBtn" class="icon-btn primary" aria-label="Ausgabe hinzufügen">+</button>
+      <div><div class="eyebrow">FINANCE OS</div><h1 id="pageTitle">Home</h1></div>
+      <button id="quickAddBtn" class="icon-btn primary" type="button" aria-label="Buchung hinzufügen">+</button>
     </header>
 
     <main>
-      <section id="dashboardView" class="view active">
-        <article class="hero-card">
-          <div class="hero-label">Noch frei im Gehaltszyklus</div>
-          <div id="cycleRemaining" class="hero-value">0,00 €</div>
-          <div id="cycleSub" class="hero-sub">Gehaltszyklus wird berechnet</div>
-          <div class="progress"><div id="cycleProgress" class="progress-fill"></div></div>
-        </article>
-
+      <section id="dashboardView" class="view active" aria-labelledby="pageTitle">
+        <article class="hero-card"><div class="hero-label">Noch frei im Gehaltszyklus</div><div id="cycleRemaining" class="hero-value">0,00 €</div><div id="cycleSub" class="hero-sub">Gehaltszyklus wird berechnet</div><div class="progress" aria-hidden="true"><div id="cycleProgress" class="progress-fill"></div></div></article>
         <div class="kpi-grid">
-          <article class="kpi-card"><span>Bis Gehalt sicher</span><strong id="safeUntilSalary">0,00 €</strong><small id="safeUntilSalaryNote">Cash nach geplanten Abbuchungen</small></article>
-          <article class="kpi-card"><span>Nettovermögen</span><strong id="netWorth">0,00 €</strong><small>Vermögen minus Verbindlichkeiten</small></article>
+          <article class="kpi-card"><span>Bis Gehalt sicher</span><strong id="safeUntilSalary">0,00 €</strong><small id="safeUntilSalaryNote">Offene Zahlungen werden abgezogen</small></article>
+          <article class="kpi-card"><span>Nettovermögen</span><strong id="netWorth">0,00 €</strong><small>Konten + Anlagen − Schulden</small></article>
           <article class="kpi-card"><span>Investments</span><strong id="investmentTotal">0,00 €</strong><small id="investmentGainSmall">Noch kein Einstand</small></article>
           <article class="kpi-card"><span>Ausgaben Zyklus</span><strong id="cycleSpent">0,00 €</strong><small id="cycleCompare">Keine Vergleichsdaten</small></article>
         </div>
-
+        <article class="panel account-snapshot-panel"><div class="panel-head"><div><span class="panel-kicker">KONTEN</span><h2>Verfügbares Geld</h2></div><button class="text-btn" type="button" data-nav="wealth">Verwalten</button></div><div id="accountSnapshot" class="horizontal-cards"></div><div id="accountSnapshotEmpty" class="empty-state">Lege dein erstes Konto an, damit Buchungen den Kontostand verändern.</div></article>
+        <article class="panel"><div class="panel-head"><div><span class="panel-kicker">NÄCHSTE TAGE</span><h2>Was wird bald abgebucht?</h2></div><button class="text-btn" type="button" data-nav="due">Alle</button></div><div id="upcomingMini" class="upcoming-list"></div><div id="upcomingMiniEmpty" class="empty-state">Noch keine offenen Fälligkeiten mit Datum hinterlegt.</div></article>
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">NÄCHSTE TAGE</span><h2>Was wird bald abgebucht?</h2></div><button class="text-btn" data-nav="due">Alle</button></div>
-          <div id="upcomingMini" class="upcoming-list"></div>
-          <div id="upcomingMiniEmpty" class="empty-state">Noch keine Fälligkeiten mit Datum hinterlegt.</div>
+          <div class="panel-head wrap"><div><span class="panel-kicker">AUSGABEN</span><h2>Analyse</h2></div><div id="analysisRange" class="chips compact" role="group" aria-label="Analysezeitraum"><button type="button" data-range="30d" class="active">30T</button><button type="button" data-range="3m">3M</button><button type="button" data-range="6m">6M</button><button type="button" data-range="1y">1J</button></div></div>
+          <div class="analysis-summary four"><div><span>Zeitraum</span><strong id="analysisSpent">0,00 €</strong></div><div><span>vs. davor</span><strong id="analysisCompare">—</strong></div><div><span>Ø pro Tag</span><strong id="analysisDaily">0,00 €</strong></div><div><span>Top-Kategorie</span><strong id="analysisTop">—</strong></div></div>
+          <canvas id="trendChart" role="img" aria-label="Ausgabenentwicklung"></canvas><div id="categoryBars" class="bars"></div><div id="categoryEmpty" class="empty-state">Noch keine Ausgaben im Zeitraum.</div>
         </article>
-
-        <article class="panel">
-          <div class="panel-head wrap"><div><span class="panel-kicker">AUSGABEN</span><h2>Analyse</h2></div><div id="analysisRange" class="chips compact"><button data-range="30d" class="active">30T</button><button data-range="3m">3M</button><button data-range="6m">6M</button><button data-range="1y">1J</button></div></div>
-          <div class="analysis-summary"><div><span>Zeitraum</span><strong id="analysisSpent">0,00 €</strong></div><div><span>vs. davor</span><strong id="analysisCompare">—</strong></div></div>
-          <canvas id="trendChart" aria-label="Ausgabenentwicklung"></canvas>
-          <div id="categoryBars" class="bars"></div>
-          <div id="categoryEmpty" class="empty-state">Noch keine Buchungen im Zeitraum.</div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">PLAN</span><h2>Monatlicher Durchschnitt</h2></div><button class="text-btn" data-nav="plan">Bearbeiten</button></div>
-          <div id="flowRows" class="flow-list"></div>
-        </article>
+        <article class="panel"><div class="panel-head"><div><span class="panel-kicker">PLAN</span><h2>Monatlicher Durchschnitt</h2></div><button class="text-btn" type="button" data-nav="plan">Bearbeiten</button></div><div id="flowRows" class="flow-list"></div></article>
       </section>
 
-      <section id="planView" class="view">
-        <p class="section-intro">Hier pflegst du Einkommen, wiederkehrende Zahlungen und deinen Gehaltstag. Jährliche Kosten bleiben als echte Jahresabbuchung erhalten – zusätzlich zeigt Finance OS den Monatsdurchschnitt.</p>
-
+      <section id="planView" class="view" aria-labelledby="pageTitle">
+        <p class="section-intro">Hier planst du echte Cashflows. Jahreskosten bleiben Jahresabbuchungen; der Monatsdurchschnitt dient nur der Planung.</p>
+        <article class="panel"><div class="panel-head"><div><span class="panel-kicker">GEHALTSZYKLUS</span><h2>Wann beginnt dein Finanzmonat?</h2></div></div><div class="setting-row"><div><strong>Gehaltstag</strong><small>Bei 29/30/31 wird im kurzen Monat der letzte Kalendertag genutzt.</small></div><input id="salaryDayInput" type="number" min="1" max="31" inputmode="numeric" aria-label="Gehaltstag" /></div><div id="salaryCyclePreview" class="helper"></div></article>
+        <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">EINNAHMEN</span><h2>Einkommen je Zyklus</h2></div><button id="addIncomeBtn" class="pill-btn" type="button">Hinzufügen</button></div><div id="incomeList" class="edit-list"></div></article>
+        <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">FIXKOSTEN</span><h2>Wiederkehrende Ausgaben</h2></div><button id="addFixedBtn" class="pill-btn" type="button">Hinzufügen</button></div><div id="fixedList" class="edit-list"></div><p class="helper">Betrag = echte Abbuchung. Beispiel: 94 € ADAC jährlich, nicht 7,83 € monatlich.</p></article>
+        <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">SPAREN</span><h2>Sparpläne & Rücklagen</h2></div><button id="addSavingBtn" class="pill-btn" type="button">Hinzufügen</button></div><div id="savingList" class="edit-list"></div><p class="helper">Rücklage = Transfer auf ein eigenes Rücklagenkonto. ETF-Sparplan = Einzahlung ins Investment. Beides reduziert dein variables Budget, ist aber keine Konsumausgabe.</p></article>
+        <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">OPTIONAL</span><h2>Raten & Verpflichtungen</h2></div><button id="addDebtPaymentBtn" class="pill-btn" type="button">Hinzufügen</button></div><div id="debtPaymentList" class="edit-list"></div></article>
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">GEHALTSZYKLUS</span><h2>Wann startet dein Finanzmonat?</h2></div></div>
-          <div class="setting-row"><div><strong>Gehaltstag</strong><small>z. B. 28. → Zyklus 28. bis 27.</small></div><input id="salaryDayInput" type="number" min="1" max="31" inputmode="numeric" /></div>
-          <div id="salaryCyclePreview" class="helper"></div>
-        </article>
-
-        <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">EINNAHMEN</span><h2>Monatliches Einkommen</h2></div><button id="addIncomeBtn" class="pill-btn">Hinzufügen</button></div>
-          <div id="incomeList" class="edit-list"></div>
-        </article>
-
-        <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">FIXKOSTEN</span><h2>Wiederkehrende Abbuchungen</h2></div><button id="addFixedBtn" class="pill-btn">Hinzufügen</button></div>
-          <div id="fixedList" class="edit-list"></div>
-          <p class="helper">Betrag = tatsächliche Abbuchung. Beispiel ADAC: 94 € jährlich, nicht 7,83 € monatlich. Den Monatsdurchschnitt rechnet Finance OS selbst.</p>
-        </article>
-
-        <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">SPAREN</span><h2>Sparpläne / Rücklagen</h2></div><button id="addSavingBtn" class="pill-btn">Hinzufügen</button></div>
-          <div id="savingList" class="edit-list"></div>
-        </article>
-
-        <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">OPTIONAL</span><h2>Raten / Verpflichtungen</h2></div><button id="addDebtPaymentBtn" class="pill-btn">Hinzufügen</button></div>
-          <div id="debtPaymentList" class="edit-list"></div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">BUDGET</span><h2>Variables Limit</h2></div></div>
-          <div id="budgetModeSwitch" class="segmented"><button data-mode="auto" class="active">Automatisch</button><button data-mode="manual">Eigenes Limit</button></div>
+          <div class="panel-head"><div><span class="panel-kicker">BUDGET</span><h2>Variables Limit</h2></div></div><div id="budgetModeSwitch" class="segmented" role="group" aria-label="Budgetmodus"><button type="button" data-mode="auto" class="active">Automatisch</button><button type="button" data-mode="manual">Eigenes Limit</button></div>
           <div class="budget-summary"><div><span>Ø maximal / Monat</span><strong id="averageBudgetValue">0,00 €</strong></div><div><span>Aktueller Zyklus</span><strong id="cycleBudgetValue">0,00 €</strong></div></div>
-          <label id="manualBudgetWrap" class="money-input hidden"><span>Eigenes Limit pro Gehaltszyklus</span><input id="manualBudgetInput" data-money="1" type="text" inputmode="decimal" placeholder="0,00" /><small id="manualBudgetPreview" class="money-preview"></small></label>
+          <label id="manualBudgetWrap" class="money-input hidden"><span>Eigenes Limit pro Gehaltszyklus</span><input id="manualBudgetInput" data-money="1" type="text" inputmode="decimal" autocomplete="off" placeholder="0,00" /><small id="manualBudgetPreview" class="money-preview"></small></label><div id="manualBudgetWarning" class="inline-warning hidden"></div>
         </article>
       </section>
 
-      <section id="transactionsView" class="view">
-        <div class="row-between section-toolbar"><div><p class="section-intro no-margin">Variable Ausgaben erfassen und nach Zeitraum, Kategorie oder Text filtern.</p></div><button id="addTransactionBtn" class="pill-btn">+ Ausgabe</button></div>
-        <article class="panel">
-          <div class="filters filters-3"><input id="monthFilter" type="month" /><select id="categoryFilter"><option value="">Alle Kategorien</option></select><input id="searchFilter" type="search" placeholder="Suche" /></div>
-          <div class="transaction-summary"><span>Gefiltert</span><strong id="filteredTransactionSum">0,00 €</strong></div>
-        </article>
-        <div id="transactionList" class="transaction-list"></div>
-        <div id="transactionEmpty" class="empty-state large">Noch keine passenden Buchungen.</div>
+      <section id="transactionsView" class="view" aria-labelledby="pageTitle">
+        <div class="row-between section-toolbar"><p class="section-intro no-margin">Ausgaben, Einnahmen, Erstattungen, Transfers und Investment-Einzahlungen.</p><button id="addTransactionBtn" class="pill-btn" type="button">+ Buchung</button></div>
+        <article class="panel"><div class="filters filters-5"><input id="monthFilter" type="month" aria-label="Monat" /><select id="transactionTypeFilter" aria-label="Buchungstyp"><option value="">Alle Typen</option></select><select id="accountFilter" aria-label="Konto"><option value="">Alle Konten</option></select><select id="categoryFilter" aria-label="Kategorie"><option value="">Alle Kategorien</option></select><input id="searchFilter" type="search" placeholder="Suche" aria-label="Buchungen durchsuchen" /></div><div class="transaction-summary"><span>Ausgaben im Filter</span><strong id="filteredTransactionSum">0,00 €</strong></div></article>
+        <div id="transactionList" class="transaction-list"></div><div id="transactionEmpty" class="empty-state large">Noch keine passenden Buchungen.</div>
       </section>
 
-      <section id="dueView" class="view">
-        <article class="hero-card compact-hero">
-          <div class="hero-label">Bis zum nächsten Gehalt</div>
-          <div id="dueTotalUntilSalary" class="hero-value small">0,00 €</div>
-          <div id="dueSalarySub" class="hero-sub">Geplante Abbuchungen</div>
-        </article>
-        <div class="kpi-grid two">
-          <article class="kpi-card"><span>Nächste 30 Tage</span><strong id="due30Total">0,00 €</strong><small id="due30Count">0 Abbuchungen</small></article>
-          <article class="kpi-card"><span>Ohne Fälligkeit</span><strong id="undatedCount">0</strong><small>Bitte im Plan ergänzen</small></article>
-        </div>
-
-        <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">KALENDER</span><h2 id="calendarTitle">Monat</h2></div><div class="calendar-nav"><button id="calendarPrev" class="mini-btn">‹</button><button id="calendarToday" class="mini-btn wide">Heute</button><button id="calendarNext" class="mini-btn">›</button></div></div>
-          <div class="calendar-weekdays"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
-          <div id="calendarGrid" class="calendar-grid"></div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">FÄLLIGKEITEN</span><h2 id="dueListTitle">Diesen Monat</h2></div></div>
-          <div id="dueList" class="due-list"></div>
-          <div id="dueEmpty" class="empty-state">In diesem Monat ist nichts geplant.</div>
-        </article>
+      <section id="dueView" class="view" aria-labelledby="pageTitle">
+        <article class="hero-card compact-hero"><div class="hero-label">Noch offen bis zum nächsten Gehalt</div><div id="dueTotalUntilSalary" class="hero-value small">0,00 €</div><div id="dueSalarySub" class="hero-sub">Geplante Abbuchungen</div></article>
+        <div class="kpi-grid three"><article class="kpi-card"><span>Nächste 30 Tage</span><strong id="due30Total">0,00 €</strong><small id="due30Count">0 Abbuchungen</small></article><article class="kpi-card"><span>Danach verfügbar</span><strong id="safeAfterDue">0,00 €</strong><small>Verfügbare Konten</small></article><article class="kpi-card"><span>Ohne Fälligkeit</span><strong id="undatedCount">0</strong><small>Bitte im Plan ergänzen</small></article></div>
+        <article class="panel"><div class="panel-head"><div><span class="panel-kicker">KALENDER</span><h2 id="calendarTitle">Monat</h2></div><div class="calendar-nav"><button id="calendarPrev" class="mini-btn" type="button" aria-label="Vorheriger Monat">‹</button><button id="calendarToday" class="mini-btn wide" type="button">Heute</button><button id="calendarNext" class="mini-btn" type="button" aria-label="Nächster Monat">›</button></div></div><div class="calendar-weekdays" aria-hidden="true"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div><div id="calendarGrid" class="calendar-grid"></div><div id="selectedDayPanel" class="selected-day hidden"><strong id="selectedDayTitle"></strong><div id="selectedDayList" class="due-list"></div></div></article>
+        <article class="panel"><div class="panel-head"><div><span class="panel-kicker">OFFENE ZAHLUNGEN</span><h2>Demnächst</h2></div></div><div id="dueGroupedList" class="due-groups"></div><div id="dueEmpty" class="empty-state">Aktuell ist nichts offen.</div></article>
       </section>
 
-      <section id="wealthView" class="view">
+      <section id="wealthView" class="view" aria-labelledby="pageTitle">
         <article class="wealth-hero"><span>Nettovermögen</span><strong id="wealthNetWorth">0,00 €</strong><small id="wealthBreakdown">0,00 € Vermögen</small></article>
-
+        <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">KONTEN</span><h2>Kontostände</h2></div><button id="addAccountBtn" class="pill-btn" type="button">Hinzufügen</button></div><div id="accountList" class="edit-list"></div><div class="panel-total"><span>Konten gesamt</span><strong id="accountTotal">0,00 €</strong></div><p class="helper">Neue Buchungen verändern das gewählte Konto. Beim Abgleich kannst du den Stand aus deiner Bank-App übernehmen und die Differenz nachvollziehen.</p></article>
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">INVESTMENTS</span><h2>Performance</h2></div><span id="portfolioPerformanceBadge" class="badge">—</span></div>
-          <div class="investment-summary"><div><span>Wert heute</span><strong id="portfolioValue">0,00 €</strong></div><div><span>Investiert</span><strong id="portfolioCost">0,00 €</strong></div><div><span>Gewinn / Verlust</span><strong id="portfolioGain">0,00 €</strong></div></div>
-          <div id="investmentRange" class="chips"><button data-range="1m">1M</button><button data-range="3m">3M</button><button data-range="1y">1J</button><button data-range="max" class="active">MAX</button></div>
-          <canvas id="investmentChart" aria-label="Investmententwicklung"></canvas>
-          <p id="investmentChartNote" class="helper"></p>
+          <div class="panel-head"><div><span class="panel-kicker">INVESTMENTS</span><h2>Einzahlungsbereinigte Entwicklung</h2></div><span id="portfolioPerformanceBadge" class="badge">—</span></div>
+          <div class="investment-summary four"><div><span>Wert heute</span><strong id="portfolioValue">0,00 €</strong></div><div><span>Einstand</span><strong id="portfolioCost">—</strong></div><div><span>Gewinn / Verlust</span><strong id="portfolioGain">—</strong></div><div><span>Zeitraum-Performance</span><strong id="portfolioPeriodGain">—</strong></div></div>
+          <div id="investmentRange" class="chips" role="group" aria-label="Investmentzeitraum"><button type="button" data-range="1m">1M</button><button type="button" data-range="3m">3M</button><button type="button" data-range="1y">1J</button><button type="button" data-range="max" class="active">MAX</button></div><canvas id="investmentChart" role="img" aria-label="Investmentwert und Einstand"></canvas><p id="investmentChartNote" class="helper"></p>
         </article>
-
-        <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">KONTEN & ANLAGEN</span><h2>Vermögen</h2></div><button id="addAssetBtn" class="pill-btn">Hinzufügen</button></div>
-          <div id="assetList" class="edit-list"></div>
-        </article>
-
+        <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">DEPOT</span><h2>Investments</h2></div><button id="addInvestmentBtn" class="pill-btn" type="button">Hinzufügen</button></div><div id="investmentList" class="edit-list"></div></article>
+        <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">WEITERE ASSETS</span><h2>Sonstiges Vermögen</h2></div><button id="addAssetBtn" class="pill-btn" type="button">Hinzufügen</button></div><div id="assetList" class="edit-list"></div></article>
+        <article class="panel"><div class="panel-head"><div><span class="panel-kicker">AUFTEILUNG</span><h2>Wo steckt dein Vermögen?</h2></div></div><canvas id="allocationChart" role="img" aria-label="Vermögensaufteilung"></canvas><div id="allocationLegend" class="legend-list"></div><div id="allocationEmpty" class="empty-state">Noch kein Vermögen eingetragen.</div></article>
+        <article class="panel"><div class="panel-head"><div><span class="panel-kicker">VERLAUF</span><h2>Nettovermögen</h2></div></div><canvas id="netWorthChart" role="img" aria-label="Nettovermögensverlauf"></canvas><p id="netWorthChartNote" class="helper"></p></article>
+        <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">OPTIONAL</span><h2>Verbindlichkeiten</h2></div><button id="addLiabilityBtn" class="pill-btn" type="button">Hinzufügen</button></div><div id="liabilityList" class="edit-list"></div></article>
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">AUFTEILUNG</span><h2>Wo steckt dein Vermögen?</h2></div></div>
-          <canvas id="allocationChart"></canvas><div id="allocationLegend" class="legend-list"></div><div id="allocationEmpty" class="empty-state">Noch kein Vermögen eingetragen.</div>
+          <div class="panel-head"><div><span class="panel-kicker">MARKTDATEN</span><h2>Kurse auf Abruf</h2></div><button id="refreshPricesBtn" class="text-btn" type="button">Alle aktualisieren</button></div>
+          <div class="field-row settings-fields"><label class="field"><span>Anbieter</span><select id="marketProvider"><option value="manual">Manuell</option><option value="twelveData">Twelve Data</option><option value="alphaVantage">Alpha Vantage</option></select></label><label class="field"><span>Persönlicher API-Key</span><input id="marketApiKey" type="password" autocomplete="off" placeholder="Nur lokal gespeichert" /></label></div>
+          <button id="saveMarketSettingsBtn" class="secondary-btn full" type="button">Einstellungen speichern</button><p class="helper">Der Key liegt ausschließlich in deiner IndexedDB und wird nur direkt an den gewählten Anbieter gesendet. Im öffentlichen Repo steht kein Key. Kurse werden bewusst nur auf Knopfdruck geladen.</p><div id="marketDataStatus" class="helper"></div>
         </article>
-
         <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">VERLAUF</span><h2>Nettovermögen</h2></div></div>
-          <canvas id="netWorthChart"></canvas><p id="netWorthChartNote" class="helper"></p>
-        </article>
-
-        <article class="panel editor-panel">
-          <div class="panel-head"><div><span class="panel-kicker">OPTIONAL</span><h2>Verbindlichkeiten</h2></div><button id="addLiabilityBtn" class="pill-btn">Hinzufügen</button></div>
-          <div id="liabilityList" class="edit-list"></div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-head"><div><span class="panel-kicker">DATEN</span><h2>Backup & Einstellungen</h2></div></div>
-          <div class="data-status"><div><span>Lokaler Speicher</span><strong id="storageStatus">Wird geprüft…</strong><button id="persistBtn" class="tiny-btn hidden" type="button">Speicher schützen</button></div><div><span>Letztes Backup</span><strong id="lastBackupStatus">Noch keines</strong></div></div>
-          <div id="backupWarning" class="backup-warning">Backup empfohlen: Deine Daten sind lokal auf diesem Gerät. Exportiere regelmäßig eine Sicherung.</div>
-          <div class="action-grid"><button id="exportBtn" class="action-btn">Backup exportieren</button><label class="action-btn file-btn">Backup importieren<input id="importInput" type="file" accept="application/json" /></label><button id="restoreBtn" class="action-btn">Letzten lokalen Stand</button><button id="resetBtn" class="action-btn danger">Alle Daten löschen</button></div>
-          <p class="helper">Keine Finanzdaten werden an GitHub übertragen. GitHub hostet nur den öffentlichen App-Code. Deine Einträge liegen lokal in IndexedDB.</p>
-          <div class="app-version" id="appVersionLabel">Finance OS</div>
+          <div class="panel-head"><div><span class="panel-kicker">DATEN</span><h2>Backup & Einstellungen</h2></div></div><div class="data-status"><div><span>Lokaler Speicher</span><strong id="storageStatus">Wird geprüft…</strong><button id="persistBtn" class="tiny-btn hidden" type="button">Speicher schützen</button></div><div><span>Letztes Backup</span><strong id="lastBackupStatus">Noch keines</strong></div></div><div id="backupWarning" class="backup-warning">Backup empfohlen: Deine Daten sind lokal auf diesem Gerät. Exportiere regelmäßig eine Sicherung.</div>
+          <div class="action-grid"><button id="exportBtn" class="action-btn" type="button">Backup exportieren</button><label class="action-btn file-btn">Backup importieren<input id="importInput" type="file" accept="application/json" /></label><button id="restoreBtn" class="action-btn" type="button">Letzten lokalen Stand</button><button id="resetBtn" class="action-btn danger" type="button">Daten zurücksetzen</button></div><p class="helper">Keine Finanzdaten werden an GitHub übertragen. Deine Einträge und API-Einstellungen liegen lokal in IndexedDB. Der persönliche API-Key wird nicht ins Backup geschrieben.</p><div class="app-version" id="appVersionLabel">Finance OS</div>
         </article>
       </section>
     </main>
 
-    <nav class="bottom-nav" aria-label="Navigation">
-      <button class="nav-item active" data-view="dashboard"><span>◫</span><small>Home</small></button>
-      <button class="nav-item" data-view="plan"><span>⌁</span><small>Plan</small></button>
-      <button class="nav-item" data-view="transactions"><span>≡</span><small>Buchungen</small></button>
-      <button class="nav-item" data-view="due"><span>▦</span><small>Fällig</small></button>
-      <button class="nav-item" data-view="wealth"><span>◇</span><small>Vermögen</small></button>
-    </nav>
+    <nav class="bottom-nav" aria-label="Navigation"><button class="nav-item active" type="button" data-view="dashboard"><span aria-hidden="true">◫</span><small>Home</small></button><button class="nav-item" type="button" data-view="plan"><span aria-hidden="true">⌁</span><small>Plan</small></button><button class="nav-item" type="button" data-view="transactions"><span aria-hidden="true">≡</span><small>Buchungen</small></button><button class="nav-item" type="button" data-view="due"><span aria-hidden="true">▦</span><small>Fällig</small></button><button class="nav-item" type="button" data-view="wealth"><span aria-hidden="true">◇</span><small>Vermögen</small></button></nav>
   </div>
 
-  <dialog id="entryDialog">
-    <form id="entryForm" class="modal-card">
-      <div class="modal-head"><div><span class="panel-kicker" id="dialogKicker">NEU</span><h2 id="dialogTitle">Eintrag</h2></div><button type="button" data-dialog-cancel class="icon-btn">×</button></div>
-      <div id="dialogFields"></div>
-      <div class="modal-actions"><button type="button" data-dialog-cancel class="secondary-btn">Abbrechen</button><button id="dialogSaveBtn" type="submit" class="primary-btn">Speichern</button></div>
-    </form>
-  </dialog>
-
-  <div id="toast" class="toast"></div>
-  <script src="./app.js" defer></script>
+  <dialog id="entryDialog"><form id="entryForm" class="modal-card"><div class="modal-head"><div><span class="panel-kicker" id="dialogKicker">NEU</span><h2 id="dialogTitle">Eintrag</h2></div><button type="button" data-dialog-cancel class="icon-btn" aria-label="Dialog schließen">×</button></div><div id="dialogFields"></div><div class="modal-actions"><button type="button" data-dialog-cancel class="secondary-btn">Abbrechen</button><button id="dialogSaveBtn" type="submit" class="primary-btn">Speichern</button></div></form></dialog>
+  <dialog id="importDialog"><div class="modal-card"><div class="modal-head"><div><span class="panel-kicker">BACKUP PRÜFEN</span><h2>Importvorschau</h2></div><button type="button" data-import-cancel class="icon-btn" aria-label="Import schließen">×</button></div><div id="importSummary" class="preview-grid"></div><div id="importWarnings" class="import-warnings"></div><p class="helper">Der aktuelle Stand wird vor dem Import als lokaler Snapshot gesichert.</p><div class="modal-actions"><button type="button" data-import-cancel class="secondary-btn">Abbrechen</button><button id="confirmImportBtn" type="button" class="primary-btn">Geprüft importieren</button></div></div></dialog>
+  <dialog id="reconcileDialog"><form id="reconcileForm" class="modal-card"><div class="modal-head"><div><span class="panel-kicker">KONTENABGLEICH</span><h2 id="reconcileTitle">Konto abgleichen</h2></div><button type="button" data-reconcile-cancel class="icon-btn" aria-label="Abgleich schließen">×</button></div><label class="field"><span>Stand in Finance OS</span><strong id="reconcileExpected">0,00 €</strong></label><label class="field"><span>Stand in deiner Bank-App</span><input id="reconcileActual" data-money="1" data-money-signed="1" type="text" inputmode="decimal" autocomplete="off" required placeholder="0,00" /><small id="reconcilePreview" class="money-preview"></small></label><div id="reconcileDifference" class="reconcile-difference"></div><label class="field"><span>Notiz (optional)</span><input id="reconcileNote" type="text" placeholder="z. B. fehlende Buchungen" /></label><div class="modal-actions"><button type="button" data-reconcile-cancel class="secondary-btn">Abbrechen</button><button type="submit" class="primary-btn">Differenz übernehmen</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./core.js" defer></script><script src="./app.js" defer></script>
 </body>
 </html>
